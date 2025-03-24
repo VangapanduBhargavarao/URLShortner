@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top:80px;
+    margin: 0;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.welcome-text h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e1e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    background: #5a6fd6;
+}
+
+.signin-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.signin-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signin-link a:hover {
+    color: #5a6fd6;
+    text-decoration: underline;
+}
+.intro{
+    text-align: center;
+    background-color: aqua;
+}
+.marquee-container {
+    background-color: #f4f4f4;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 1000;
+}
+marquee{
+    font-weight: bold;
+    color:#333
+}
+
+
+

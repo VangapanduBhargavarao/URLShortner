@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+</head>
+<body>
+  <div class="welcome-heading">
+     <h1>Welcome to short url</h1>
+   </div>
+   <div class="container">
+     <h1>paste your url here</h1>
+     <div class="input-container">
+       <div class="input-group">
+         <form method="post" action="{% url 'index' %}">
+             {% csrf_token %}
+             <input type="text" name="long_url" placeholder="Enter your long URL here" required>
+             <button type="submit">Shorten URL</button>
+         </form>
+       </div>
+     </div>
+     {% if short_url %}
+   <div id="short-url-section">
+    <p>Shortened URL: <span id="short-url">{{ short_url }}</span></p>
+    <button onclick="copyAndHide()">Copy</button>
+   </div>
+{% endif %}
+   </div>
+   <div class="description">
+     <h2>Simple and fast URL shortener!</h2>
+     <p>ShortURL allows to shorten long links from <a href="https://www.instagram.com" target="_blank">Instagram</a>, <a href="https://www.facebook.com" target="_blank">Facebook</a>, <a href="https://www.youtube.com" target="_blank">YouTube</a>, <a href="https://www.twitter.com" target="_blank">Twitter</a>, <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>, <a href="https://www.whatsapp.com" target="_blank">WhatsApp</a>, TikTok, blogs and sites. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails.</p>
+   </div>
+   <div class="features">
+     <div class="feature-box">
+       <i class="fas fa-bolt feature-icon"></i>
+       <h3>Easy</h3>
+       <p>ShortURL is easy and fast, enter the long link to get your shortened link</p>
+     </div>
+     <div class="feature-box">
+       <i class="fas fa-link feature-icon"></i>
+       <h3>Shortened</h3>
+       <p>Use any link, no matter what size, ShortURL always shortens</p>
+     </div>
+     <div class="feature-box">
+       <i class="fas fa-shield-alt feature-icon"></i>
+       <h3>Secure</h3>
+       <p>It is fast and secure, our service has HTTPS protocol and data encryption</p>
+     </div>
+     <div class="feature-box">
+       <i class="fas fa-chart-bar feature-icon"></i>
+       <h3>Statistics</h3>
+       <p>Check the number of clicks that your shortened URL received</p>
+     </div>
+     <div class="feature-box">
+       <i class="fas fa-check-circle feature-icon"></i>
+       <h3>Reliable</h3>
+       <p>All links that try to disseminate spam, viruses and malware are deleted</p>
+     </div>
+     <div class="feature-box">
+       <i class="fas fa-mobile-alt feature-icon"></i>
+       <h3>Compatible</h3>
+       <p>Compatible with smartphones, tablets and desktop</p>
+     </div>
+   </div>
+   <footer class="footer">
+     <p>© 2025 ShortUrl.at - Tool to shorten a long link</p>
+   </footer>
+   <script>
+    function copyAndHide() {
+        const shortUrlElement = document.getElementById("short-url");
+        const shortUrl = shortUrlElement.innerText;
+
+        navigator.clipboard.writeText(shortUrl).then(() => {
+            alert("Shortened URL copied to clipboard!");
+            document.getElementById("short-url-section").style.display = "none";
+        }).catch(err => {
+            alert("Failed to copy the URL. Please try again.");
+        });
+    }
+   </script>
+</body>
+</html>
